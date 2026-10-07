@@ -1,0 +1,112 @@
+{
+  "_meta": {
+    "version": "1.0-live",
+    "status": "Field names, enums and structure captured from the LIVE ROSSA submission form (study 322, ROSSA-20260930-5472) on 2026-10-03 by reading each section of the real portal. This replaces the earlier provisional guess.",
+    "source": "https://rossa.uchc.edu/study/<id>/  - sections: study-information, investigators, animal-experimentation/{setup,animal-models,drug-treatments,gonadectomy-procedure}",
+    "notes": "Covers the three assigned sections only (2a Study Information, 2b Investigators, 2c Animal Experimentation). Sex / age / sample-size (n) are NOT in these sections on the real form - they live under Phenotype Analysis > Sample Groups, which is out of scope for this assignment. Drug Treatments and Gonadectomy sub-forms are gated behind the Setup checkboxes and were not reachable for this (genetic-only) study; their fields are a best estimate from the ingestion guide and are flagged as such."
+  },
+  "sections": {
+    "study_information": {
+      "_title": "Study Information (step 2a: title and summary)",
+      "_rules": [
+        "title: copy the Study Title exactly as printed, including any apparent typo. Note a suspected typo in reviewer_flags, do not correct it.",
+        "summary: the form's Study Summary is a longer narrative than a one-line abstract - 4 to 8 sentences covering aim, model, methods and main findings, based only on the article. This field may paraphrase; its evidence must still be exact quotes from the article.",
+        "funding: copy the funding statement; null if the article states none.",
+        "conflicts_of_interest: copy the competing-interests / conflict statement verbatim (often 'The authors have declared that no competing interests exist' or similar).",
+        "study_completion_date: the form wants a date. Use the publication date if no explicit study end date is given, and say so in reviewer_flags. Format YYYY-MM-DD.",
+        "has_been_published: 'yes' when the article shows a journal, volume/issue and DOI.",
+        "doi: the bare DOI (for example 10.1371/journal.pone.0148292), not the full URL.",
+        "pubmed_id: the PubMed numeric ID if the article or its header shows one; the form accepts a PubMed URL. null if not present in the text."
+      ],
+      "title":          {"type": "string",  "required": true,  "description": "Study Title, exactly as printed."},
+      "summary":        {"type": "string",  "required": true,  "description": "Study Summary: a multi-sentence narrative (aim, model, methods, findings)."},
+      "funding":        {"type": "string",  "required": false, "description": "Funding Sources statement as written."},
+      "conflicts_of_interest": {"type": "string", "required": false, "description": "Conflicts of Interest / competing-interests statement as written."},
+      "study_completion_date": {"type": "string", "required": true, "description": "Study Completion Date, YYYY-MM-DD (fall back to publication date, flagged)."},
+      "has_been_published": {"type": "enum", "enum": ["yes", "no"], "required": true, "description": "Has this study been published?"},
+      "doi":            {"type": "string",  "required": true,  "description": "Digital Object Identifier, bare DOI without URL prefix."},
+      "pubmed_id":      {"type": "string",  "required": false, "description": "PubMed ID (number), if stated."}
+    },
+    "investigators": {
+      "_title": "Investigators (step 2b: investigator info)",
+      "_rules": [
+        "The form stores a LIST of investigators. Each needs a role: 'submitting', 'corresponding' or 'contributing'. A submission requires at least one submitting AND one corresponding (one person may hold both).",
+        "A paper never names who submits to ROSSA, so do NOT invent a submitting investigator - leave the list to the manuscript authors and set role 'corresponding' or 'contributing'. Flag that a submitting investigator must be added by a human.",
+        "corresponding: the author marked with an asterisk or named in a correspondence/email line.",
+        "affiliation is split into THREE fields on the real form - department, organization, country - not one string. Map the author's numbered affiliation(s) into these. If an affiliation does not separate cleanly, put the best guess and flag it.",
+        "country must be a full country name (the form uses a country dropdown, e.g. 'France', 'United States')."
+      ],
+      "investigators": {
+        "type": "list",
+        "item": {
+          "role":         {"type": "enum", "enum": ["submitting", "corresponding", "contributing"], "required": true, "description": "Investigator role on this submission."},
+          "first_name":   {"type": "string", "required": true,  "description": "First Name."},
+          "last_name":    {"type": "string", "required": true,  "description": "Last Name."},
+          "email":        {"type": "string", "required": true,  "description": "Email."},
+          "department":   {"type": "string", "required": false, "description": "Primary Department."},
+          "organization": {"type": "string", "required": false, "description": "Primary Organization / institution."},
+          "country":      {"type": "string", "required": false, "description": "Country (full name, matches the form's dropdown)."}
+        }
+      }
+    },
+    "animal_experimentation": {
+      "_title": "Animal Experimentation (step 2c: animal experimentations)",
+      "_rules": [
+        "setup: three booleans matching the real Setup checkboxes. genetic = uses genetically modified animals. drug = investigates a drug treatment. gonadectomy = performs a gonadectomy. Select all that apply.",
+        "animal_models: one entry per distinct animal model (what the animal IS). On the real form this does NOT include sex, age or n - those are per-cohort and live under Sample Groups (out of scope here). Do not put them here.",
+        "genetic_modification_category must be one of the real ROSSA categories (enum below). For a plain Hfe-/- targeted knockout, that is 'Global Knockout/Knockin - Gene Targeting'. Use 'No Genetic Modification' for a wild-type / plain-strain group.",
+        "For a modified model also give genetic_method (KO/KI), functional_change, and the modified gene with its species.",
+        "animal_model_name: the form asks for the source where the model was obtained (investigator or repository). Use null if the article does not state a source.",
+        "drug_treatments and gonadectomy_procedures: leave [] unless setup.drug / setup.gonadectomy is true. Do NOT record labelling agents (calcein, alizarin, tetracycline), anaesthetics or euthanasia agents as drug treatments - flag them instead. (These sub-forms are gated on the live site; fields here are a best estimate.)"
+      ],
+      "setup": {
+        "genetic":     {"type": "boolean", "required": true, "description": "Uses genetically modified animals."},
+        "drug":        {"type": "boolean", "required": true, "description": "Investigates the impact of a drug treatment."},
+        "gonadectomy": {"type": "boolean", "required": true, "description": "Performs a gonadectomy."}
+      },
+      "animal_models": {
+        "type": "list",
+        "item": {
+          "species": {"type": "enum", "enum": ["Mouse", "Rat"], "required": true, "description": "Species."},
+          "animal_strain": {"type": "string", "required": true, "description": "Animal Strain (e.g. C57BL/6)."},
+          "genetic_modification_category": {
+            "type": "enum",
+            "enum": [
+              "No Genetic Modification",
+              "Global Knockout/Knockin - Gene Targeting",
+              "Global Knockout - Spontaneous Mutation",
+              "Global Knockout - Insertional Mutagenesis",
+              "Global - Double Knockout",
+              "Conditional Knockout/Knockin",
+              "Conditional Knockin - Safe Harbor",
+              "Standard Transgenic"
+            ],
+            "required": true,
+            "description": "ROSSA genetic-modification category for this model."
+          },
+          "animal_model_name": {"type": "string", "required": false, "description": "Name/source of the model (investigator or repository)."},
+          "genetic_method": {"type": "enum", "enum": ["Knockout (KO)", "Knock-in (KI)"], "required": false, "description": "Type of genetic modification (modified models only)."},
+          "functional_change": {"type": "enum", "enum": ["Loss of Function", "Gain of Function", "Hypomorphic Mutant", "Dominant Negative", "Unknown"], "required": false, "description": "Functional change (modified models only)."},
+          "modified_gene": {"type": "string", "required": false, "description": "Genetically modified gene symbol (modified models only)."},
+          "modified_gene_species": {"type": "enum", "enum": ["Human", "Mouse", "Rat"], "required": false, "description": "Species of the modified gene."}
+        }
+      },
+      "drug_treatments": {
+        "type": "list",
+        "item": {
+          "agent":    {"type": "string", "required": true,  "description": "Drug or agent name (experimental variable only)."},
+          "dose":     {"type": "string", "required": false, "description": "Dose with units."},
+          "route":    {"type": "string", "required": false, "description": "Route of administration."},
+          "schedule": {"type": "string", "required": false, "description": "Timing and duration."}
+        }
+      },
+      "gonadectomy_procedures": {
+        "type": "list",
+        "item": {
+          "procedure":     {"type": "enum", "enum": ["orchiectomy", "ovariectomy", "sham", "other"], "required": true, "description": "Surgical procedure."},
+          "age_at_surgery":{"type": "string", "required": false, "description": "Age when the surgery was performed."}
+        }
+      }
+    }
+  }
+}
