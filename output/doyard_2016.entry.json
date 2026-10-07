@@ -1,0 +1,294 @@
+{
+  "paper_id": "doyard_2016",
+  "generated": "2026-10-03",
+  "source": "manual",
+  "status": "DRAFT - human review required before anything is submitted to ROSSA",
+  "schema": "1.0-live (provisional)",
+  "study_information": {
+    "title": "Decreased Bone Formation Explains Osteoporosis in a Genetic Mouse Model of Hemochromatosiss",
+    "summary": "Osteoporosis may complicate iron-overload diseases such as genetic hemochromatosis, but the mechanisms are poorly understood. The authors analysed the impact of excess iron in Hfe-/- male mice, a model of human hemochromatosis, on osteoblast activity and bone microarchitecture using histomorphometry. Hfe-/- mice were sacrificed at 6 months and compared with wild-type controls. Iron-overloaded mice showed excess bone iron, a decreased bone formation rate, and microarchitectural impairment (lower trabecular bone volume and number, increased trabecular separation, and reduced connectivity and complexity). The findings support a negative effect of iron on osteoblast recruitment and/or function contributing to iron-related osteoporosis.",
+    "funding": "This work was supported by grants from Region Bretagne (MD) and the \"Societe Francaise de Rhumatologie\" Paris, France.",
+    "conflicts_of_interest": "The authors have declared that no competing interests exist.",
+    "study_completion_date": "2016-02-01",
+    "has_been_published": "yes",
+    "doi": "10.1371/journal.pone.0148292",
+    "pubmed_id": null
+  },
+  "investigators": {
+    "investigators": [
+      {
+        "role": "corresponding",
+        "first_name": "Pascal",
+        "last_name": "Guggenbuhl",
+        "email": "pascal.guggenbuhl@chu-rennes.fr",
+        "department": "Service de Rhumatologie (Rheumatology)",
+        "organization": "Universite de Rennes 1 / CHU Hopital Sud, Rennes",
+        "country": "France"
+      }
+    ]
+  },
+  "animal_experimentation": {
+    "setup": {
+      "genetic": true,
+      "drug": false,
+      "gonadectomy": false
+    },
+    "animal_models": [
+      {
+        "species": "Mouse",
+        "animal_strain": "C57BL/6",
+        "genetic_modification_category": "Global Knockout/Knockin - Gene Targeting",
+        "animal_model_name": null,
+        "genetic_method": "Knockout (KO)",
+        "functional_change": "Loss of Function",
+        "modified_gene": "Hfe",
+        "modified_gene_species": "Mouse"
+      },
+      {
+        "species": "Mouse",
+        "animal_strain": "C57BL/6",
+        "genetic_modification_category": "No Genetic Modification",
+        "animal_model_name": null,
+        "genetic_method": null,
+        "functional_change": null,
+        "modified_gene": null,
+        "modified_gene_species": null
+      }
+    ],
+    "drug_treatments": [],
+    "gonadectomy_procedures": []
+  },
+  "reviewer_flags": {
+    "study_information": [
+      "The title ends in 'Hemochromatosiss' (double s) - copied exactly as printed; looks like a typo in the original.",
+      "study_completion_date: the article gives no explicit study end date, so the publication date (2016-02-01) was used as a stand-in. Confirm or replace.",
+      "pubmed_id: not present in the article text. It can be looked up on PubMed (the study's PubMed ID is 26829642) and added by a human - not filled here because it is not in the source.",
+      "Accented characters were simplified to ASCII in the values (Region, Societe, Francaise); confirm preferred spelling."
+    ],
+    "investigators": [
+      "A SUBMITTING investigator is required by ROSSA but cannot come from the paper (the depositor is not named in the article). A human must add one (likely the ROSSA account holder).",
+      "Only the corresponding author (Pascal Guggenbuhl) was entered. The other authors - Mathilde Doyard, Daniel Chappard, Patricia Leroyer, Marie-Paule Roth, Olivier Loreal - can be added as 'contributing' if ROSSA wants the full author list.",
+      "Guggenbuhl's role was inferred from the asterisk + email line, not an explicit 'corresponding author' statement.",
+      "Affiliation was split into department/organization/country by mapping superscripts 1, 2 and 6; the organization combines a university and a hospital affiliation. Confirm the intended split for ROSSA."
+    ],
+    "animal_experimentation": [
+      "Calcein (10 mg/kg, 7 and 2 days before euthanasia) was a bone-mineralization LABEL, not an experimental drug - excluded from drug_treatments per ROSSA guidance.",
+      "Xylazine/Ketamine (Rompun/Imalgene) was anaesthesia before euthanasia - excluded from drug_treatments.",
+      "genetic_modification_category 'Global Knockout/Knockin - Gene Targeting' was inferred from 'Hfe-/-'; the paper does not state the exact targeting method. Confirm against the real ROSSA categories.",
+      "functional_change 'Loss of Function' is the standard interpretation of an Hfe knockout but is not stated verbatim in the paper.",
+      "Sex, age and sample size (n=7 per group) are intentionally NOT recorded here - on the real ROSSA form they belong under Phenotype Analysis > Sample Groups, which is outside this assignment's three sections."
+    ]
+  },
+  "produced_by": {
+    "study_information": "unspecified",
+    "investigators": "unspecified",
+    "animal_experimentation": "unspecified"
+  },
+  "audit": [
+    {
+      "path": "study_information.title",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "study_information.summary",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "study_information.funding",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "study_information.conflicts_of_interest",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "study_information.study_completion_date",
+      "confidence": "low",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "study_information.has_been_published",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "study_information.doi",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "study_information.pubmed_id",
+      "confidence": "not_found",
+      "verified": null,
+      "notes": []
+    },
+    {
+      "path": "investigators.investigators[0].role",
+      "confidence": "medium",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "investigators.investigators[0].first_name",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "investigators.investigators[0].last_name",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "investigators.investigators[0].email",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "investigators.investigators[0].department",
+      "confidence": "medium",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "investigators.investigators[0].organization",
+      "confidence": "medium",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "investigators.investigators[0].country",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.setup.genetic",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.setup.drug",
+      "confidence": "high",
+      "verified": null,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.setup.gonadectomy",
+      "confidence": "high",
+      "verified": null,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[0].species",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[0].animal_strain",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[0].genetic_modification_category",
+      "confidence": "medium",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[0].animal_model_name",
+      "confidence": "not_found",
+      "verified": null,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[0].genetic_method",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[0].functional_change",
+      "confidence": "medium",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[0].modified_gene",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[0].modified_gene_species",
+      "confidence": "medium",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[1].species",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[1].animal_strain",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[1].genetic_modification_category",
+      "confidence": "high",
+      "verified": true,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[1].animal_model_name",
+      "confidence": "not_found",
+      "verified": null,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[1].genetic_method",
+      "confidence": "not_found",
+      "verified": null,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[1].functional_change",
+      "confidence": "not_found",
+      "verified": null,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[1].modified_gene",
+      "confidence": "not_found",
+      "verified": null,
+      "notes": []
+    },
+    {
+      "path": "animal_experimentation.animal_models[1].modified_gene_species",
+      "confidence": "not_found",
+      "verified": null,
+      "notes": []
+    }
+  ],
+  "pipeline_problems": []
+}

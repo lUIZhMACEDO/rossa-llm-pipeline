@@ -1,0 +1,22 @@
+{
+  "investigators": [
+    {
+      "role": { "value": "corresponding", "evidence": "* pascal.guggenbuhl@chu-rennes.fr", "confidence": "medium" },
+      "first_name": { "value": "Pascal", "evidence": "Olivier Loreal1,2,5, Pascal Guggenbuhl1,2,6*", "confidence": "high" },
+      "last_name": { "value": "Guggenbuhl", "evidence": "Olivier Loreal1,2,5, Pascal Guggenbuhl1,2,6*", "confidence": "high" },
+      "email": { "value": "pascal.guggenbuhl@chu-rennes.fr", "evidence": "* pascal.guggenbuhl@chu-rennes.fr", "confidence": "high" },
+      "department": { "value": "Service de Rhumatologie (Rheumatology)", "evidence": "6 Service de Rhumatologie,\nHopital Sud, CHU, F- 35033, Rennes, France", "confidence": "medium" },
+      "organization": { "value": "Universite de Rennes 1 / CHU Hopital Sud, Rennes", "evidence": [
+        "2 Universite de Rennes 1, IFR 140, F- 35043, Rennes,\nFrance",
+        "6 Service de Rhumatologie,\nHopital Sud, CHU, F- 35033, Rennes, France"
+      ], "confidence": "medium" },
+      "country": { "value": "France", "evidence": "6 Service de Rhumatologie,\nHopital Sud, CHU, F- 35033, Rennes, France", "confidence": "high" }
+    }
+  ],
+  "reviewer_flags": [
+    "A SUBMITTING investigator is required by ROSSA but cannot come from the paper (the depositor is not named in the article). A human must add one (likely the ROSSA account holder).",
+    "Only the corresponding author (Pascal Guggenbuhl) was entered. The other authors - Mathilde Doyard, Daniel Chappard, Patricia Leroyer, Marie-Paule Roth, Olivier Loreal - can be added as 'contributing' if ROSSA wants the full author list.",
+    "Guggenbuhl's role was inferred from the asterisk + email line, not an explicit 'corresponding author' statement.",
+    "Affiliation was split into department/organization/country by mapping superscripts 1, 2 and 6; the organization combines a university and a hospital affiliation. Confirm the intended split for ROSSA."
+  ]
+}

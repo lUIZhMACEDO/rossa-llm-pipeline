@@ -1,0 +1,52 @@
+{
+  "title": {
+    "value": "Decreased Bone Formation Explains Osteoporosis in a Genetic Mouse Model of Hemochromatosiss",
+    "evidence": "Decreased Bone Formation Explains Osteoporosis in a Genetic Mouse Model of Hemochromatosiss",
+    "confidence": "high"
+  },
+  "summary": {
+    "value": "Osteoporosis may complicate iron-overload diseases such as genetic hemochromatosis, but the mechanisms are poorly understood. The authors analysed the impact of excess iron in Hfe-/- male mice, a model of human hemochromatosis, on osteoblast activity and bone microarchitecture using histomorphometry. Hfe-/- mice were sacrificed at 6 months and compared with wild-type controls. Iron-overloaded mice showed excess bone iron, a decreased bone formation rate, and microarchitectural impairment (lower trabecular bone volume and number, increased trabecular separation, and reduced connectivity and complexity). The findings support a negative effect of iron on osteoblast recruitment and/or function contributing to iron-related osteoporosis.",
+    "evidence": [
+      "Our aim was to analyse the impact of excess iron in Hfe-/- mice on osteoblast\nactivity and on bone microarchitecture.",
+      "Hfe-/- animals\nwere sacrificed at 6 months and compared to controls.",
+      "These observations support a negative effect of iron on osteo-\nblast recruitment and/or function, which may contribute to iron-related osteoporosis."
+    ],
+    "confidence": "high"
+  },
+  "funding": {
+    "value": "This work was supported by grants from Region Bretagne (MD) and the \"Societe Francaise de Rhumatologie\" Paris, France.",
+    "evidence": "This work was supported by grants from\nRegion Bretagne (MD) and the \"Societe Francaise de\nRhumatologie\" Paris, France.",
+    "confidence": "high"
+  },
+  "conflicts_of_interest": {
+    "value": "The authors have declared that no competing interests exist.",
+    "evidence": "Competing Interests: The authors have declared\nthat no competing interests exist.",
+    "confidence": "high"
+  },
+  "study_completion_date": {
+    "value": "2016-02-01",
+    "evidence": "Published: February 1, 2016",
+    "confidence": "low"
+  },
+  "has_been_published": {
+    "value": "yes",
+    "evidence": "PLoS ONE 11(2):\ne0148292. doi:10.1371/journal.pone.0148292",
+    "confidence": "high"
+  },
+  "doi": {
+    "value": "10.1371/journal.pone.0148292",
+    "evidence": "doi:10.1371/journal.pone.0148292",
+    "confidence": "high"
+  },
+  "pubmed_id": {
+    "value": null,
+    "evidence": null,
+    "confidence": "not_found"
+  },
+  "reviewer_flags": [
+    "The title ends in 'Hemochromatosiss' (double s) - copied exactly as printed; looks like a typo in the original.",
+    "study_completion_date: the article gives no explicit study end date, so the publication date (2016-02-01) was used as a stand-in. Confirm or replace.",
+    "pubmed_id: not present in the article text. It can be looked up on PubMed (the study's PubMed ID is 26829642) and added by a human - not filled here because it is not in the source.",
+    "Accented characters were simplified to ASCII in the values (Region, Societe, Francaise); confirm preferred spelling."
+  ]
+}

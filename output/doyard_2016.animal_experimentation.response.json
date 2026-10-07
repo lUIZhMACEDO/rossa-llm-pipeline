@@ -1,0 +1,42 @@
+{
+  "setup": {
+    "genetic": {
+      "value": true,
+      "evidence": "Male C57BL/6 Hfe-/- mice (six months of age, n = 7) were used in this study. Male wild-type\nC57BL/6 (six months of age, n = 7) mice were used as controls.",
+      "confidence": "high"
+    },
+    "drug": { "value": false, "evidence": null, "confidence": "high" },
+    "gonadectomy": { "value": false, "evidence": null, "confidence": "high" }
+  },
+  "animal_models": [
+    {
+      "species": { "value": "Mouse", "evidence": "Male C57BL/6 Hfe-/- mice", "confidence": "high" },
+      "animal_strain": { "value": "C57BL/6", "evidence": "Male C57BL/6 Hfe-/- mice", "confidence": "high" },
+      "genetic_modification_category": { "value": "Global Knockout/Knockin - Gene Targeting", "evidence": "in Hfe\n-/- mice mimicking\nhuman GH", "confidence": "medium" },
+      "animal_model_name": { "value": null, "evidence": null, "confidence": "not_found" },
+      "genetic_method": { "value": "Knockout (KO)", "evidence": "Male C57BL/6 Hfe-/- mice", "confidence": "high" },
+      "functional_change": { "value": "Loss of Function", "evidence": "Male C57BL/6 Hfe-/- mice", "confidence": "medium" },
+      "modified_gene": { "value": "Hfe", "evidence": "the p.Cys282Tyr (C282Y) mutation in the HFE\ngene", "confidence": "high" },
+      "modified_gene_species": { "value": "Mouse", "evidence": "Male C57BL/6 Hfe-/- mice", "confidence": "medium" }
+    },
+    {
+      "species": { "value": "Mouse", "evidence": "Male wild-type\nC57BL/6 (six months of age, n = 7) mice were used as controls.", "confidence": "high" },
+      "animal_strain": { "value": "C57BL/6", "evidence": "Male wild-type\nC57BL/6 (six months of age, n = 7) mice were used as controls.", "confidence": "high" },
+      "genetic_modification_category": { "value": "No Genetic Modification", "evidence": "Male wild-type\nC57BL/6 (six months of age, n = 7) mice were used as controls.", "confidence": "high" },
+      "animal_model_name": { "value": null, "evidence": null, "confidence": "not_found" },
+      "genetic_method": { "value": null, "evidence": null, "confidence": "not_found" },
+      "functional_change": { "value": null, "evidence": null, "confidence": "not_found" },
+      "modified_gene": { "value": null, "evidence": null, "confidence": "not_found" },
+      "modified_gene_species": { "value": null, "evidence": null, "confidence": "not_found" }
+    }
+  ],
+  "drug_treatments": [],
+  "gonadectomy_procedures": [],
+  "reviewer_flags": [
+    "Calcein (10 mg/kg, 7 and 2 days before euthanasia) was a bone-mineralization LABEL, not an experimental drug - excluded from drug_treatments per ROSSA guidance.",
+    "Xylazine/Ketamine (Rompun/Imalgene) was anaesthesia before euthanasia - excluded from drug_treatments.",
+    "genetic_modification_category 'Global Knockout/Knockin - Gene Targeting' was inferred from 'Hfe-/-'; the paper does not state the exact targeting method. Confirm against the real ROSSA categories.",
+    "functional_change 'Loss of Function' is the standard interpretation of an Hfe knockout but is not stated verbatim in the paper.",
+    "Sex, age and sample size (n=7 per group) are intentionally NOT recorded here - on the real ROSSA form they belong under Phenotype Analysis > Sample Groups, which is outside this assignment's three sections."
+  ]
+}
