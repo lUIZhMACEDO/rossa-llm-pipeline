@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ROSSA entry-item pipeline for Team 51 (Dr. Shin's 9-30 To-Do).
+"""ROSSA entry-item pipeline.
 
 Steps, matching the slide "Ingesting PDF and producing entry items for ROSSA":
 

@@ -1,6 +1,6 @@
 # ROSSA metadata pipeline
 
-Senior design, Team 51. Takes a skeletal-biology paper (PDF) and drafts the ROSSA
+Senior design project. Takes a skeletal-biology paper (PDF) and drafts the ROSSA
 submission fields for three sections (study info, investigators, animal experimentation).
 For each value the LLM has to give the exact quote it came from, and the script checks
 that quote is actually in the paper before anything goes to a human to review.
