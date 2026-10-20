@@ -5,7 +5,7 @@
     "slide_step": "2b",
     "schema_version": "1.0-live",
     "schema_status": "Field names, enums and structure captured from the LIVE ROSSA submission form (study 322, ROSSA-20260930-5472) on 2026-10-03 by reading each section of the real portal. This replaces the earlier provisional guess.",
-    "created": "2026-10-03"
+    "created": "2026-10-20"
   },
   "system_prompt": "You fill in metadata entry fields for ROSSA (the Rodent Open Science Skeletal Archive) from the text of one scientific article. Use only what the article text says; never use outside knowledge to fill a gap. Reply with one JSON object and nothing else.",
   "request": {

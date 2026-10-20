@@ -5,7 +5,7 @@
     "slide_step": "2a",
     "schema_version": "1.0-live",
     "schema_status": "Field names, enums and structure captured from the LIVE ROSSA submission form (study 322, ROSSA-20260930-5472) on 2026-10-03 by reading each section of the real portal. This replaces the earlier provisional guess.",
-    "created": "2026-10-03"
+    "created": "2026-10-20"
   },
   "system_prompt": "You fill in metadata entry fields for ROSSA (the Rodent Open Science Skeletal Archive) from the text of one scientific article. Use only what the article text says; never use outside knowledge to fill a gap. Reply with one JSON object and nothing else.",
   "request": {
@@ -24,7 +24,7 @@
       "conflicts_of_interest: copy the competing-interests / conflict statement verbatim (often 'The authors have declared that no competing interests exist' or similar).",
       "study_completion_date: the form wants a date. Use the publication date if no explicit study end date is given, and say so in reviewer_flags. Format YYYY-MM-DD.",
       "has_been_published: 'yes' when the article shows a journal, volume/issue and DOI.",
-      "doi: the bare DOI (for example 10.1371/journal.pone.0148292), not the full URL.",
+      "doi: the bare DOI (for example 10.1234/journal.abcd.5678), not the full URL.",
       "pubmed_id: the PubMed numeric ID if the article or its header shows one; the form accepts a PubMed URL. null if not present in the text."
     ],
     "field_definitions": {

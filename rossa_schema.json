@@ -15,7 +15,7 @@
         "conflicts_of_interest: copy the competing-interests / conflict statement verbatim (often 'The authors have declared that no competing interests exist' or similar).",
         "study_completion_date: the form wants a date. Use the publication date if no explicit study end date is given, and say so in reviewer_flags. Format YYYY-MM-DD.",
         "has_been_published: 'yes' when the article shows a journal, volume/issue and DOI.",
-        "doi: the bare DOI (for example 10.1371/journal.pone.0148292), not the full URL.",
+        "doi: the bare DOI (for example 10.1234/journal.abcd.5678), not the full URL.",
         "pubmed_id: the PubMed numeric ID if the article or its header shows one; the form accepts a PubMed URL. null if not present in the text."
       ],
       "title":          {"type": "string",  "required": true,  "description": "Study Title, exactly as printed."},
@@ -54,7 +54,7 @@
       "_rules": [
         "setup: three booleans matching the real Setup checkboxes. genetic = uses genetically modified animals. drug = investigates a drug treatment. gonadectomy = performs a gonadectomy. Select all that apply.",
         "animal_models: one entry per distinct animal model (what the animal IS). On the real form this does NOT include sex, age or n - those are per-cohort and live under Sample Groups (out of scope here). Do not put them here.",
-        "genetic_modification_category must be one of the real ROSSA categories (enum below). For a plain Hfe-/- targeted knockout, that is 'Global Knockout/Knockin - Gene Targeting'. Use 'No Genetic Modification' for a wild-type / plain-strain group.",
+        "genetic_modification_category must be one of the real ROSSA categories (enum below). For a plain whole-body targeted knockout (Gene-/-), that is 'Global Knockout/Knockin - Gene Targeting'. Use 'No Genetic Modification' for a wild-type / plain-strain group.",
         "For a modified model also give genetic_method (KO/KI), functional_change, and the modified gene with its species.",
         "animal_model_name: the form asks for the source where the model was obtained (investigator or repository). Use null if the article does not state a source.",
         "drug_treatments and gonadectomy_procedures: leave [] unless setup.drug / setup.gonadectomy is true. Do NOT record labelling agents (calcein, alizarin, tetracycline), anaesthetics or euthanasia agents as drug treatments - flag them instead. (These sub-forms are gated on the live site; fields here are a best estimate.)"

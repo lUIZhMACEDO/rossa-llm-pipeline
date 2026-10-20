@@ -5,7 +5,7 @@
     "slide_step": "2c",
     "schema_version": "1.0-live",
     "schema_status": "Field names, enums and structure captured from the LIVE ROSSA submission form (study 322, ROSSA-20260930-5472) on 2026-10-03 by reading each section of the real portal. This replaces the earlier provisional guess.",
-    "created": "2026-10-03"
+    "created": "2026-10-20"
   },
   "system_prompt": "You fill in metadata entry fields for ROSSA (the Rodent Open Science Skeletal Archive) from the text of one scientific article. Use only what the article text says; never use outside knowledge to fill a gap. Reply with one JSON object and nothing else.",
   "request": {
@@ -20,7 +20,7 @@
       "Return output_template filled in, plus reviewer_flags. No prose and no markdown fences.",
       "setup: three booleans matching the real Setup checkboxes. genetic = uses genetically modified animals. drug = investigates a drug treatment. gonadectomy = performs a gonadectomy. Select all that apply.",
       "animal_models: one entry per distinct animal model (what the animal IS). On the real form this does NOT include sex, age or n - those are per-cohort and live under Sample Groups (out of scope here). Do not put them here.",
-      "genetic_modification_category must be one of the real ROSSA categories (enum below). For a plain Hfe-/- targeted knockout, that is 'Global Knockout/Knockin - Gene Targeting'. Use 'No Genetic Modification' for a wild-type / plain-strain group.",
+      "genetic_modification_category must be one of the real ROSSA categories (enum below). For a plain whole-body targeted knockout (Gene-/-), that is 'Global Knockout/Knockin - Gene Targeting'. Use 'No Genetic Modification' for a wild-type / plain-strain group.",
       "For a modified model also give genetic_method (KO/KI), functional_change, and the modified gene with its species.",
       "animal_model_name: the form asks for the source where the model was obtained (investigator or repository). Use null if the article does not state a source.",
       "drug_treatments and gonadectomy_procedures: leave [] unless setup.drug / setup.gonadectomy is true. Do NOT record labelling agents (calcein, alizarin, tetracycline), anaesthetics or euthanasia agents as drug treatments - flag them instead. (These sub-forms are gated on the live site; fields here are a best estimate.)"
