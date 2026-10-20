@@ -64,7 +64,7 @@ def main():
     ap.add_argument("id", nargs="?")
     ap.add_argument("--doi")
     ap.add_argument("--title")
-    ap.add_argument("--tag", default="", help="which entry to read, e.g. claude_opus")
+    ap.add_argument("--tag", default="", help="which entry to read, e.g. huggingface")
     a = ap.parse_args()
     doi, title = a.doi, a.title
     if a.id:
