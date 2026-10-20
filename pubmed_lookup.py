@@ -1,4 +1,4 @@
-"""Find a paper's PubMed ID, which is usually not printed in the PDF.
+"""Find a paper's PubMed ID (usually not printed in the PDF), plus its DOI and PMC ID.
 
 Uses NCBI E-utilities (free, no key needed for a few requests per second):
   1. search PubMed by DOI
@@ -41,21 +41,33 @@ def letters(s):
 def lookup(doi=None, title=None):
     """Return {pubmed_id, matched_by, pubmed_title, title_match} or {pubmed_id: None, ...}."""
     tried = []
-    for how, term in (("doi", f"{doi}[doi]" if doi else None),
-                      ("title", f"\"{title}\"[ti]" if title else None)):
+    # title words tagged [ti] find the paper even when punctuation or a typo differs
+    # (PubMed drops stopwords like "of"/"by", and a dropped word tagged [ti] matches nothing)
+    words = [w for w in re.findall(r"[A-Za-z0-9]+", title or "") if len(w) >= 4]
+    # a typo in one title word would sink the search, so also try with each word left out
+    title_terms = [words] + [words[:i] + words[i + 1:] for i in range(len(words))] if len(words) > 3 else [words]
+    attempts = [("doi", f"{doi}[doi]" if doi else None)] + [
+        ("title", " AND ".join(f"{w}[ti]" for w in ws) if ws else None) for ws in title_terms]
+    for how, term in attempts:
         if not term:
             continue
-        tried.append(how)
-        ids = search(term)
-        if len(ids) != 1:
+        if how not in tried:
+            tried.append(how)
+        ids = search(term)[:5]
+        if not ids or (how == "doi" and len(ids) != 1):
             continue
-        rec = get("esummary.fcgi", db="pubmed", id=ids[0])["result"][ids[0]]
-        score = SequenceMatcher(None, letters(rec.get("title")), letters(title)).ratio() if title else None
-        if score is not None and score < 0.85:
-            continue   # a different paper; do not accept it
-        return {"pubmed_id": ids[0], "matched_by": how, "pubmed_title": rec.get("title"),
-                "journal": rec.get("fulljournalname"), "pub_date": rec.get("pubdate"),
-                "title_match": None if score is None else round(score, 2)}
+        recs = get("esummary.fcgi", db="pubmed", id=",".join(ids))["result"]
+        for pmid in ids:
+            rec = recs[pmid]
+            score = (SequenceMatcher(None, letters(rec.get("title")), letters(title)).ratio()
+                     if title else None)
+            if score is not None and score < 0.85:
+                continue   # a different paper; do not accept it
+            ids_by_type = {a.get("idtype"): a.get("value") for a in rec.get("articleids", [])}
+            return {"pubmed_id": pmid, "matched_by": how, "pubmed_title": rec.get("title"),
+                    "doi": ids_by_type.get("doi"), "pmc_id": ids_by_type.get("pmc"),
+                    "journal": rec.get("fulljournalname"), "pub_date": rec.get("pubdate"),
+                    "title_match": None if score is None else round(score, 2)}
     return {"pubmed_id": None, "matched_by": None, "tried": tried}
 
 
